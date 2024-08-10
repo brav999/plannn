@@ -1,0 +1,155 @@
+/* Estilo global */
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #f7f9fc;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.5;
+}
+
+/* Contêiner de tarefas */
+.task {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid #740fd3;
+    /* Destaque com uma borda de cor */
+}
+
+/* Botões */
+button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    background-color: #740fd3;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    /* Transição suave */
+}
+
+button:hover {
+    background-color: #740fd3;
+    transform: translateY(-2px);
+    /* Leve elevação no hover */
+}
+
+button.stop {
+    background-color: #dc3545;
+}
+
+button.stop:hover {
+    background-color: #c82333;
+}
+
+/* Tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    /* Sombra suave */
+}
+
+table,
+th,
+td {
+    border: 1px solid #e3e6ea;
+}
+
+th {
+    background-color: #f1f3f5;
+    /* Cabeçalhos com fundo suave */
+    color: #740fd3;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+th,
+td {
+    padding: 15px;
+    text-align: left;
+}
+
+/* Linha ativa */
+.active-task {
+    font-weight: bold;
+    background-color: #e9f5ff;
+    /* Fundo azul claro */
+}
+
+.active-task td {
+    background-color: #e3f2fd;
+}
+
+/* Links */
+a {
+    color: #740fd3;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #740fd3;
+    text-decoration: underline;
+}
+
+h1 {
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+}
+
+footer {
+    font-size: small;
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+}
+#toast {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #740fd3;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+}
+
+#toast.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;} 
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
