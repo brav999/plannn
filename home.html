@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plannn</title>
+    <link rel="stylesheet" href="./css/stylesheet.css">
+    <link rel="icon" href="./images/favicon-32x32.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="header">
+        <img src="./images/favicon-32x32.png" alt="Plannn Logo" class="logo">
+        <h1 class="main-title">Plannn - Task Manager</h1>
+    </div>
+
+    <div id="info">
+        <h2>Informações</h2>
+        <p>Bem-vindo ao nosso site de controle de tarefas. Aqui você pode:</p>
+        <ul>
+            <li>Adicionar tarefas e acompanhar o tempo gasto em cada uma.</li>
+            <li>Iniciar o cronômetro clicando em <strong>"Iniciar"</strong>.</li>
+            <li>Pausar o cronômetro clicando em <strong>"Pausar"</strong>.</li>
+            <li>Reiniciar o cronômetro clicando novamente em <strong>"Iniciar"</strong>.</li>
+            <li>Excluir todas as tarefas clicando em <strong>"Limpar Atividades"</strong>.</li>
+        </ul>
+        <p>Para adicionar uma tarefa, digite o nome da tarefa e clique em <strong>"Adicionar Tarefa"</strong>.</p>
+    </div>
+
+
+    <div class="task">
+        <label for="taskName">Tarefa:</label>
+        <input type="text" id="taskName">
+        <button onclick="addTask()">Adicionar Tarefa</button>
+        <button id="cleanTasks" onclick="cleanTasks()">Limpar Atividades</button>
+    </div>
+
+    <div class="toast-container">
+
+    </div>
+
+    <h2>Lista de Atividades</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Tarefa</th>
+                <th>Tempo Total</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody id="taskList">
+            <!-- As tarefas serão adicionadas aqui -->
+            <script src="./js/script.js"></script>
+        </tbody>
+    </table>
+
+</body>
+
+<footer>
+    Desenvolvido por Brav Lima®
+</footer>
+
+</html>

@@ -1,0 +1,281 @@
+/* Estilo global */
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #f6f6f7;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.5;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    /* Alinha verticalmente o logo e o título */
+    justify-content: center;
+    /* Centraliza o conteúdo horizontalmente */
+    gap: 15px;
+    /* Espaçamento entre o logo e o título */
+    margin: 20px 0;
+    /* Espaçamento superior e inferior */
+}
+
+.logo {
+    width: 50px;
+    /* Ajuste o tamanho do logo conforme necessário */
+    height: auto;
+    /* Mantém a proporção do logo */
+}
+
+.main-title {
+    font-family: "Poppins", sans-serif;
+    /* Fonte moderna e limpa */
+    font-size: 2.5rem;
+    /* Tamanho do texto do título */
+    font-weight: bold;
+    /* Negrito para ênfase */
+    color: #333;
+    /* Cor escura para bom contraste */
+    text-align: center;
+    /* Alinha o texto ao centro */
+    margin: 0;
+    /* Remove a margem padrão do título */
+    text-transform: uppercase;
+    /* Maiúsculas para um efeito impactante */
+    letter-spacing: 1px;
+    /* Espaçamento entre letras */
+    background: linear-gradient(90deg, #6c63ff, #740fd3);
+    /* Gradiente moderno */
+    -webkit-background-clip: text;
+    background-clip: text;
+    /* Aplica o gradiente apenas ao texto */
+    -webkit-text-fill-color: transparent;
+    /* Torna o texto transparente para mostrar o gradiente */
+    border-bottom: 2px solid #740fd3;
+    /* Linha abaixo do título */
+    padding-bottom: 5px;
+    /* Espaçamento inferior */
+}
+
+
+login-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    align-items: center;
+}
+
+h3 {
+    text-align: center;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid #740fd3;
+    border-right: 4px solid #740fd3;
+}
+
+#info {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    /* Cor de fundo mais suave para melhor contraste */
+    border-radius: 8px;
+    /* Menor raio para um estilo mais moderno */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* Sombra mais suave e difusa */
+    border-left: 6px solid #6c63ff;
+    /* Cor de borda mais moderna e suave */
+    font-family: Arial, sans-serif;
+    /* Fonte mais padrão e legível */
+}
+
+#info h2 {
+    color: #333;
+    /* Cor do título para um bom contraste com o fundo */
+}
+
+#info p,
+#info ul {
+    line-height: 1.3;
+    /* Melhor espaçamento entre linhas */
+}
+
+#info ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+#info li {
+    margin-bottom: 8px;
+}
+
+
+/* Contêiner de tarefas */
+.task {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid #740fd3;
+    /* Destaque com uma borda de cor */
+}
+
+/* Botões */
+button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    background-color: #740fd3;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    /* Transição suave */
+}
+
+#cleanTasks {
+    background-color: #dc3545;
+}
+
+#cleanTasks:hover {
+    background-color: #dc3545;
+}
+
+button:hover {
+    background-color: #740fd3;
+    transform: translateY(-2px);
+    /* Leve elevação no hover */
+}
+
+button.stop {
+    background-color: #dc3545;
+}
+
+button.stop:hover {
+    background-color: #c82333;
+}
+
+/* Tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    /* Sombra suave */
+}
+
+table,
+th,
+td {
+    border: 1px solid #e3e6ea;
+}
+
+th {
+    background-color: #f1f3f5;
+    /* Cabeçalhos com fundo suave */
+    color: #740fd3;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+th,
+td {
+    padding: 15px;
+    text-align: left;
+}
+
+/* Linha ativa */
+.active-task {
+    font-weight: bold;
+    background-color: #e9f5ff;
+    /* Fundo azul claro */
+}
+
+.active-task td {
+    background-color: #e3f2fd;
+}
+
+/* Links */
+a {
+    color: #740fd3;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #740fd3;
+    text-decoration: underline;
+}
+
+h1 {
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    color: #740fd3;
+}
+
+footer {
+    font-size: small;
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+}
+
+/* Estilo da área que contém os toasts */
+.toast-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+
+/* Estilo base para o toast */
+.toast {
+    position: relative;
+    background-color: #740fd3;
+    color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 0.5s, transform 0.5s;
+    overflow: hidden;
+    /* Garante que a barra de progresso não ultrapasse o toast */
+}
+
+/* Barra de progresso */
+.toast .progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 5px;
+    background-color: #fff;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 3s linear;
+    /* Duração igual ao tempo de exibição do toast */
+}
+
+/* Toast visível */
+.toast.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Animação de desaparecimento */
+.toast.hide {
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+/* Barra de progresso cheia */
+.toast.show .progress-bar {
+    transform: scaleX(1);
+}
