@@ -68,7 +68,6 @@ function cleanTasks() {
     showToast("Não há tarefas para limpar.");
   }
   tasks = [];
-  renderTasks();
 }
 
 function exit() {
