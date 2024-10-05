@@ -1,4 +1,4 @@
-import Task from "../models/taskModel";
+import Task from '../models/taskModel';
 
 interface TaskData {
   // Define the properties of a Task data object here
@@ -15,7 +15,7 @@ const createTask: (taskData: TaskData) => Promise<Task> = async (taskData) => {
 
 const updateTask: (
   taskId: string,
-  taskData: TaskData
+  taskData: TaskData,
 ) => Promise<Task | null> = async (taskId, taskData) => {
   return await Task.findByIdAndUpdate(taskId, taskData, { new: true });
 };

@@ -1,10 +1,5 @@
 // src/controllers/taskController.ts
-
-import Task from "../models/taskModel";
-
-interface Task {
-  // Define the properties of a Task object here (optional)
-}
+import Task from '../models/taskModel';
 
 const getTasks = async (req: any, res: any) => {
   // Update request and response types
@@ -12,7 +7,7 @@ const getTasks = async (req: any, res: any) => {
     const tasks = await Task.find();
     res.json(tasks);
   } catch (error) {
-    res.status(500).json({ message: "Error fetching tasks" });
+    res.status(500).json({ message: 'Error fetching tasks' });
   }
 };
 
@@ -23,7 +18,7 @@ const createTask = async (req: any, res: any) => {
     const savedTask = await newTask.save();
     res.status(201).json(savedTask);
   } catch (error) {
-    res.status(400).json({ message: "Error creating task" });
+    res.status(400).json({ message: 'Error creating task' });
   }
 };
 
