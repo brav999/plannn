@@ -3,6 +3,7 @@
 import express from "express";
 import { check } from "express-validator";
 import createTask, {
+  deleteTask,
   getTasks,
   updateTask,
 } from "../controllers/taskController";
