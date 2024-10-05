@@ -15,4 +15,4 @@ jobs:
               -H "Authorization: token ${{ secrets.PERSONAL_ACCESS_TOKEN }}" \
               -H "Accept: application/vnd.github.v3+json" \
               https://api.github.com/repos/brav999/plannn-tests/actions/workflows/playwright.yml/dispatches \
-              -d '{"ref":"branch_ou_tag", "inputs": {}}'
+              -d '{"ref":"main", "inputs": {}}'
