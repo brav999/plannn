@@ -1,7 +1,13 @@
-// src/controllers/taskController.js
-const Task = require("../models/taskModel");
+// src/controllers/taskController.ts
 
-const getTasks = async (req, res) => {
+import Task from "../models/taskModel";
+
+interface Task {
+  // Define the properties of a Task object here (optional)
+}
+
+const getTasks = async (req: any, res: any) => {
+  // Update request and response types
   try {
     const tasks = await Task.find();
     res.json(tasks);
@@ -10,7 +16,8 @@ const getTasks = async (req, res) => {
   }
 };
 
-const createTask = async (req, res) => {
+const createTask = async (req: any, res: any) => {
+  // Update request and response types
   try {
     const newTask = new Task(req.body);
     const savedTask = await newTask.save();
@@ -20,4 +27,4 @@ const createTask = async (req, res) => {
   }
 };
 
-module.exports = { getTasks, createTask };
+export default { getTasks, createTask };
