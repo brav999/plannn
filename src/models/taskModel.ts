@@ -1,5 +1,5 @@
 // src/models/taskModel.ts
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 interface Task {
   title: string;
@@ -15,6 +15,6 @@ const taskSchema = new mongoose.Schema<Task>({
   createdAt: { type: Date, default: Date.now },
 });
 
-const Task = mongoose.model<Task>("Task", taskSchema);
+const Task = mongoose.model<Task>('Task', taskSchema);
 
 export default Task;
