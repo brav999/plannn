@@ -1,32 +1,60 @@
-// src/routes/taskRoutes.ts
-
-import express from "express";
+import express, { Request, Response, NextFunction } from "express";
 import { check } from "express-validator";
-import createTask, {
-  deleteTask,
-  getTasks,
-  updateTask,
+import { 
+    createTask, 
+    getTasks, 
+    updateTask, 
+    deleteTask 
 } from "../controllers/taskController";
+
 const router = express.Router();
 
-// Define type for middleware function (assuming authMiddleware is already converted)
-type AuthMiddleware = (req: any, res: any, next: any) => void;
+// Define tipos mais específicos para o middleware
+interface AuthenticatedRequest extends Request {
+    user?: {
+        id: string;
+        // outros campos do usuário se necessário
+    };
+}
 
-router.get("/", getTasks);
-router.post("/", createTask);
+type AuthMiddleware = (
+    req: AuthenticatedRequest,
+    res: Response,
+    next: NextFunction
+) => Promise<void> | void;
+
+// Rotas
+router.get(
+    "/", 
+    getTasks
+);
+
+router.post(
+    "/",
+    [
+        check("title", "Title is required").not().isEmpty(),
+        check("description", "Description is required").not().isEmpty()
+    ],
+    createTask
+);
+
 router.put(
-  "/:id",
-  [check("id", "Invalid task ID").isMongoId()], // Remove authMiddleware for now (assuming separate conversion)
-  updateTask
+    "/:id",
+    [
+        check("id", "Invalid task ID").isMongoId(),
+        check("title", "Title is required").optional().not().isEmpty(),
+        check("description", "Description is required").optional().not().isEmpty(),
+        check("status", "Status must be valid").optional().isIn(['pending', 'in_progress', 'completed'])
+    ],
+    updateTask
 );
+
 router.delete(
-  "/:id",
-  [check("id", "Invalid task ID").isMongoId()], // Remove authMiddleware for now (assuming separate conversion)
-  deleteTask
+    "/:id",
+    [
+        check("id", "Invalid task ID").isMongoId()
+    ],
+    deleteTask
 );
 
-// Add authMiddleware after conversion (assuming it's in a separate file)
-// router.put("/:id", [check("id", "Invalid task ID").isMongoId(), authMiddleware], updateTask);
-// router.delete("/:id", [check("id", "Invalid task ID").isMongoId(), authMiddleware], deleteTask);
-
-module.exports = router;
+export default router;
