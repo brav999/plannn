@@ -6,8 +6,10 @@ import {
     updateTask, 
     deleteTask 
 } from "../controllers/taskController";
+import authMiddleware from '../middleware/authMiddleware';
 
 const router = express.Router();
+router.use(authMiddleware);
 
 // Define tipos mais específicos para o middleware
 interface AuthenticatedRequest extends Request {

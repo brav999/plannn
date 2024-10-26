@@ -1,20 +1,19 @@
-// src/models/taskModel.ts
-import mongoose from 'mongoose';
+import mongoose, { Schema, Document } from 'mongoose';
 
-interface Task {
+interface ITask extends Document {
   title: string;
-  description?: string; // Optional property
-  completed: boolean;
+  description: string;
+  status: 'pending' | 'in_progress' | 'completed';
   createdAt: Date;
+  updatedAt: Date;
 }
 
-const taskSchema = new mongoose.Schema<Task>({
+const TaskSchema: Schema = new Schema({
   title: { type: String, required: true },
-  description: { type: String },
-  completed: { type: Boolean, default: false },
+  description: { type: String, required: true },
+  status: { type: String, enum: ['pending', 'in_progress', 'completed'], default: 'pending' },
   createdAt: { type: Date, default: Date.now },
+  updatedAt: { type: Date, default: Date.now }
 });
 
-const Task = mongoose.model<Task>('Task', taskSchema);
-
-export default Task;
+export default mongoose.model<ITask>('Task', TaskSchema);

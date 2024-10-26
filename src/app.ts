@@ -29,12 +29,6 @@ app.use(express.json({ limit: '10kb' })); // Limitar tamanho do payload
 app.use(express.urlencoded({ extended: true, limit: '10kb' }));
 app.use(limiter); // Rate limiting
 
-// Middleware para adicionar timestamp na requisição
-app.use((req, res, next) => {
-    req.requestTime = new Date().toISOString();
-    next();
-});
-
 // Rotas
 app.use('/api/v1/tasks', taskRoutes);
 
@@ -43,6 +37,10 @@ app.use(notFoundMiddleware);
 
 // Middleware de erro global
 app.use(errorMiddleware);
+
+app.use('*', (req, res) => {
+    res.status(404).json({ message: 'Route not found' });
+  });
 
 // Tratamento de erros não capturados
 process.on('unhandledRejection', (err: Error) => {

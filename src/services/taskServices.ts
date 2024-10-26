@@ -1,7 +1,11 @@
 import Task from '../models/taskModel';
 
 interface TaskData {
-  // Define the properties of a Task data object here
+  title: string;
+  description: string;
+  status: 'pending' | 'in_progress' | 'completed';
+  createdAt?: Date;
+  updatedAt?: Date;
 }
 
 const getTasks: () => Promise<Task[]> = async () => {
